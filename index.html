@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-The goal of the code is to create a HTML5 drawing canvas.
+The goal of the code is to create a HTML5 drawing canvas along with other buttons that draw a rectangle, name, image, and an eraser that clears the canvas.
  
 Known Issues:
-blah, blah, blah, blah
+I had a mix up with defining a function and setting the correct dimensions. 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -61,7 +61,7 @@ function image_myCanvas(){
 	var cat = new Image();
 	cat.src = "Scottish-Fold-Cattery.jpeg";
 	cat.onload = function () {
-		myCanvas_context.drawImage(cat, 10, 10);
+		myCanvas_context.drawImage(cat, 0.5, 0.5);
 		};
 }
 
