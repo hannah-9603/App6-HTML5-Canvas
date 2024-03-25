@@ -39,23 +39,40 @@ var docMod = document.lastModified; // loads last modified time stamp into docMo
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 
-function draw_myCanvas(){
-	var myCanvas_canvas = document.getElementById("myCanvas"); 
-	var myCanvas_canvas = myCanvas_canvas.getContext("2d");
+//This code draws a filled rectangle. 
+function draw_myCanvas(){ 
+	var myCanvas_canvas = document.getElementById("myCanvas"); //This code finds canvas element in the DOM.
+	var myCanvas_context = myCanvas_canvas.getContext("2d"); //This code draws context.
 	myCanvas_context.fillRect( 30, 30, 200, 150); 
 }
 
-function name_myCanvas(){
-	var myCanvas_canvas = document.getElementById("myCanvas");
-	var myCanvas_canvas = myCanvas_canvas.getContext("2d");
+//This code adds my name.
+function name_myCanvas(){ 
+	var myCanvas_canvas = document.getElementById("myCanvas"); //This code finds canvas element in the DOM.
+	var myCanvas_context = myCanvas_canvas.getContext("2d"); //This code draws context.
 	myCanvas_canvas.fillText("Hannah Choi", 150, 50);
 	
 }
+
+//This code adds an image of a cat.
 function image_myCanvas(){
-	var myCanvas_canvas = document.getElementById("myCanvas");
-	var myCanvas_canvas = myCanvas_canvas.getContext("2d");
+	var myCanvas_canvas = document.getElementById("myCanvas"); //This code finds canvas element in the DOM.
+	var myCanvas_context = myCanvas_canvas.getContext("2d"); //This code draws context.
 	var cat = new Image();
+	cat.src = "Scottish-Fold-Cattery.jpeg";
+	cat.onload = function () {
+		context.drawImage(cat, 10, 10);
+		};
 }
+
+//This code clears canvas.
+function clear_myCanvas(){
+	var myCanvas_canvas = document.getElementById("myCanvas"); //This code finds canvas element in the DOM.
+	var myCanvas_context = myCanvas_canvas.getContext("2d");  //This code draws context.
+	myCanvas_context.clearRect(0, 0, 400, 400,); 
+}
+
+	
 </script>
 
 
@@ -91,7 +108,10 @@ function image_myCanvas(){
 			<canvas id ="myCanvas" width="300" height="225" style="border:1px solid #000000;"></canvas>
 		<br />
 <div class ="button-container" id="one">
-	<a href="#one" onclick="
+	<a href="#one" onclick="draw_myCanvas()"  class="w3-btn w3-black"> Rectangle </a>
+	<a href="#one" onclick="name_myCanvas()"  class="w3-btn w3-black"> My Name </a>
+	<a href="#one" onclick="image_myCanvas()"  class="w3-btn w3-black"> Cat Image </a>
+	<a href="#one" onclick="clear_myCanvas()"  class="w3-btn w3-black"> Clear Canvas </a>
 	
 
 </div>	
