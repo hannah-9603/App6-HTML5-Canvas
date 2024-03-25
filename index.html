@@ -61,8 +61,8 @@ function image_myCanvas(){
 	var cat = new Image(); //Creates the image object
 	cat.src = "Scottish-Fold-Cattery.jpeg"; //Defines the source of the image
 	cat.onload = function () { //The image is inputted and positioned.
-		var targetWidth = cat.width * 0.05;
-		var targetHeight = cat.height * 0.05;
+		var targetWidth = cat.width * 0.4;
+		var targetHeight = cat.height * 0.4;
 		myCanvas_context.drawImage(cat, 0.5, 0.5, targetWidth, targetHeight);
 		};
 }
